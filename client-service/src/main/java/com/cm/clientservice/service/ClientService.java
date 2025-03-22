@@ -1,5 +1,6 @@
 package com.cm.clientservice.service;
 
+import com.cm.clientservice.dto.ClientRequestDto;
 import com.cm.clientservice.dto.ClientResponseDto;
 import com.cm.clientservice.mapper.ClientMapper;
 import com.cm.clientservice.model.Client;
@@ -21,5 +22,11 @@ public class ClientService {
         List<Client> clients = clientRepository.findAll();
 
         return clients.stream().map(ClientMapper::toDto).toList();
+    }
+
+    public ClientResponseDto createClient(ClientRequestDto clientRequestDto) {
+        Client newClient = clientRepository.save(ClientMapper.toModel(clientRequestDto));
+
+        return ClientMapper.toDto(newClient);
     }
 }
