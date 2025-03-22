@@ -1,5 +1,6 @@
 package com.cm.clientservice.dto;
 
+import com.cm.clientservice.dto.validators.CreateClientValidationGroup;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -20,7 +21,7 @@ public class ClientRequestDto {
     @NotBlank(message = "Date of birth is required")
     private String dateOfBirth;
 
-    @NotNull(message = "Registered date is required")
+    @NotBlank(groups= CreateClientValidationGroup.class, message = "Registered date is required")
     private String registeredDate;
 
     public String getName() {
