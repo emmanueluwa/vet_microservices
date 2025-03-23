@@ -56,4 +56,8 @@ public class ClientService {
 
         return ClientMapper.toDto(clientUpdated);
     }
+
+    public void deleteClient(UUID id) {
+        clientRepository.deleteById(id);
+    }
 }
