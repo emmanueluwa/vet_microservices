@@ -43,7 +43,7 @@ public class ClientService {
                 () -> new ClientNotFoundException("No client with given id was found: "+ id)
         );
 
-        if(clientRepository.existsByEmail(clientRequestDto.getEmail())) {
+        if(clientRepository.existsByEmailAndIdNot(clientRequestDto.getEmail(), id)) {
             throw new EmailAlreadyExistsException("A patient with this email "+"already exists"+clientRequestDto.getEmail());
         }
 

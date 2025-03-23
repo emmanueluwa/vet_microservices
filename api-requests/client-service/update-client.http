@@ -3,7 +3,7 @@ PUT http://localhost:4000/clients/123e4567-e89b-12d3-a456-426614174002
 Content-Type: application/json
 
 {
-  "name" : "Buddy Goodboy",
+  "name" : "Buddy Goodboy UPDATED26",
   "email": "trying@mail.com",
   "address": "789 Fetch Street, Wagtown",
   "dateOfBirth": "2019-03-12"
